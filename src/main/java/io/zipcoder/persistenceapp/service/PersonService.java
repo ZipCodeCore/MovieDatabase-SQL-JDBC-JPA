@@ -48,6 +48,14 @@ public class PersonService {
        return people;
     }
 
+    public void deletePerson(int personId){
+        String sql = "DELETE FROM PERSON WHERE ID = " + personId;
+        jdbc.execute(sql);
+    }
+
+
+
+
 
 
 }
