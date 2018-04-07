@@ -1,6 +1,8 @@
 package io.zipcoder.persistenceapp.domain;
 
 import javax.persistence.Entity;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -49,6 +51,7 @@ public class Person {
     }
 
     public void setBirthday(Date birthday) {
+
         this.birthday = birthday;
     }
 
