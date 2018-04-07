@@ -103,4 +103,16 @@ public class PersonController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @RequestMapping(value = "/person/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<?> updatePerson(@PathVariable int id, @RequestBody Person person){
+        try {
+            service.getPersonById(id);
+        }
+        catch(EmptyResultDataAccessException e){
+            return new ResponseEntity<>("Person Not Found In Database",HttpStatus.NOT_FOUND);
+        }
+        service.updatePerson(person, id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

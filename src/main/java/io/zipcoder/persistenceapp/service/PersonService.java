@@ -78,6 +78,14 @@ public class PersonService {
         jdbc.execute(sql);
     }
 
+    public void updatePerson(Person person, int id) throws EmptyResultDataAccessException {
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String sql = "UPDATE person SET FIRST_NAME = '" + person.getFirstName() +"', LAST_NAME = '" + person.getLastName() +
+                "', MOBILE = '" + person.getMobile() + "', BIRTHDAY = '" + format.format(person.getBirthday()) + "', HOME_ID = '" +
+                person.getHomeId() + "' WHERE ID = " + id;
+        jdbc.execute(sql);
+    }
+
     private void buildPersonList(List<Person> listToBuild, List<Map<String, Object>> results) {
         for (Map row : results) {
             Person person = new Person();
