@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp.service;
+package io.zipcoder.persistenceapp.rowmapper;
 
 
 import io.zipcoder.persistenceapp.domain.Person;

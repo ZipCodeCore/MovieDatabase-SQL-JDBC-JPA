@@ -1,8 +1,8 @@
 package io.zipcoder.persistenceapp.service;
 
 import io.zipcoder.persistenceapp.cache.PersonSurnameSearchCache;
-import io.zipcoder.persistenceapp.cache.PersonSurnameSearchCacheImp;
 import io.zipcoder.persistenceapp.domain.Person;
+import io.zipcoder.persistenceapp.rowmapper.PersonRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
