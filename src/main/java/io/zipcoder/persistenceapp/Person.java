@@ -3,6 +3,7 @@ package io.zipcoder.persistenceapp;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class Person extends JdbcTemplate{
+
     private Integer id;
     private String first_name;
     private String last_name;
