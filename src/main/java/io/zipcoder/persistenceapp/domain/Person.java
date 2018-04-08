@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp.entity;
+package io.zipcoder.persistenceapp.domain;
 
 import java.util.Date;
 

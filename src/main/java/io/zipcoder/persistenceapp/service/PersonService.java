@@ -9,9 +9,4 @@ import javax.persistence.EntityTransaction;
 @Service
 public class PersonService {
 
-    private EntityManager entityManager;
-    private EntityTransaction entityTransaction = entityManager.getTransaction();
-
-    public
-
 }
