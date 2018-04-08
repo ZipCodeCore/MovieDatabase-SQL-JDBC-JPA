@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -26,11 +27,9 @@ public class PersonService {
     }
 
     @RequestMapping(value = "/people", method = RequestMethod.POST)
-    public ResponseEntity createPerson(Integer id, String first_name, String last_name, String mobile, String birthday, Integer home_id){
-//        String sql = "INSERT INTO people (ID, FIRST_NAME, LAST_NAME, MOBILE, BIRTHDAY, HOME_ID) VALUES (" + first_name + ", " + last_name + ", "
-//                + mobile + ", " + birthday + ", " + home_id + ")";
-        String sql = "INSERT INTO person (FIRST_NAME, LAST_NAME, MOBILE, BIRTHDAY, HOME_ID) VALUES ('Jeff', 'Gordon', '9876543210', '1985-03-07', 2)";
-        Person person = new Person(id, first_name, last_name, mobile, birthday, home_id);
+    public ResponseEntity createPerson(@RequestBody Person person){
+//        Person person = new Person(first_name, last_name, mobile, birthday, home_id);
+        String sql = createInsertStatement(person);
         template.execute(sql);
         return new ResponseEntity(HttpStatus.CREATED);
     }
@@ -48,4 +47,11 @@ public class PersonService {
 //        Iterable people = template.queryForObject;
 //        return new ResponseEntity(people, HttpStatus.OK);
 //    }
+
+    private String createInsertStatement(Person person){
+        String sql = "INSERT INTO PERSON(first_name, last_name, mobile, birthday, home_id) VALUES( '" +
+                person.getFirst_name() + "','" + person.getLast_name() + "','" + person.getMobile() + "','" + person.getBirthday() + "','" + person.getHome_id()
+                + "')";
+        return sql;
+    }
 }
