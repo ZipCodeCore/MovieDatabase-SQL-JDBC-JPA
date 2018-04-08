@@ -7,6 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 @Service
-public class PersonService {
+public interface PersonService {
 
 }
