@@ -7,18 +7,17 @@ public class Person {
     private String lastName;
     private String mobileNumber;
     private Date birthDate;
-    private int homeId;
-    private int id;
+    private Integer homeId;
+    Long Id;
 
     public Person(){
     }
-    public Person(String firstName, String lastName, String mobileNumber, Date birthDate, int homeId, int id){
+    public Person(Long Id, String firstName, String lastName, String mobileNumber){
+        this.Id = Id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
-        this.birthDate = birthDate;
-        this.homeId = homeId;
-        this.id = id;
+
     }
     public String getFirstName() {
         return firstName;
@@ -56,16 +55,16 @@ public class Person {
         return homeId;
     }
 
-    public void setHomeId(int homeId) {
+    public void setHomeId(Integer homeId) {
         this.homeId = homeId;
     }
 
-    public int getId() {
-        return id;
+    public Long getId() {
+        return Id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(Long id) {
+        this.Id = id;
     }
 
     public String toString(){
