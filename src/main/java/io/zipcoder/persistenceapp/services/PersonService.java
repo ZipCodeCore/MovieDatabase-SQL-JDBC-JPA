@@ -1,49 +1,29 @@
 package io.zipcoder.persistenceapp.services;
 
+import io.zipcoder.persistenceapp.domain.Person;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class PersonService {
+import java.util.List;
 
+public interface PersonService {
+
+    // What's this for again
     JdbcTemplate jdbcTemplate = new JdbcTemplate();
 
-    public void addPerson() {
+    void addPerson();
 
-    }
+    void updateExistingPerson();
 
-    public void updateExistingPerson() {
+    void removePerson();
 
-    }
+    void removeListOfPeople();
 
-    public void removePerson() {
+    List<Person> findPeopleWithFirstName(String firstName);
 
-    }
+    List<Person> findPeopleWithLastName(String lastName);
 
-    public void removeListOfPeople() {
+    List<Person> findPeopleWithBirthday(String birthday);
 
-    }
-
-    public void findPeopleWithFirstName() {
-
-    }
-
-    public void findPeopleWithLastName() {
-
-    }
-
-    public void findPeopleWithBirthdate() {
-
-    }
-
-    public void findPersonWithId() {
-
-    }
-
-    public void generateMapLastNameList() {
-        // return map<lastName, List<firstName of people with that lastName>>
-    }
-
-    public void generateMapFirstNameOccurrences() {
-        // return map<firstName, int occurrences>
-    }
+    Person findPersonWithId();
 
 }
