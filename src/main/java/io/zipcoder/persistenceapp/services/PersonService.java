@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp;
+package io.zipcoder.persistenceapp.services;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
