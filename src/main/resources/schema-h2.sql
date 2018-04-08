@@ -13,6 +13,8 @@ CREATE TABLE PERSON (
   ADD FOREIGN KEY (HOME_ID)
   REFERENCES HOME(ID);
 
+INSERT INTO person (first_name, last_name, mobile, birthday, home_id)
+VALUES ('Bobby', 'Labonte', '1234567890', '1973-01-23', 1);
 
 DROP TABLE IF EXISTS HOME;
 
