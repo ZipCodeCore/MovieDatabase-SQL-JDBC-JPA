@@ -1,49 +1,55 @@
 package io.zipcoder.persistenceapp.Controller;
 
-import io.zipcoder.persistenceapp.Domain.Person;
+import io.zipcoder.persistenceapp.Entity.Person;
 import io.zipcoder.persistenceapp.Service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMethod.*;
 
-//where the mapping goes
 @RestController
 public class PersonController {
 
+    private PersonService personService;
+
     @Autowired
-    PersonService personService;
+    public PersonController(PersonService personService){
+        this.personService = personService;
+    }
 
-    @RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
-    public ResponseEntity<?> getSinglePersonById(@PathVariable Long id){
-        personService.getSinglePersonById(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+    @RequestMapping(value = "/people/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Person> getPerson(@PathVariable Long id) {
+        return personService.findById(id);
     }
-    @RequestMapping(value = "/persons", method = RequestMethod.GET)
-    public ResponseEntity<?> getAllPersons(){
-        personService.getAllPersons();
-        return new ResponseEntity<>(HttpStatus.OK);
+    @RequestMapping(value = "/people", method = RequestMethod.GET)
+    public ResponseEntity<Iterable<Person>> getAllPeople() {
+        return personService.getAllPeople();
     }
-    @RequestMapping(value = "/person/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> deletePersonById(@PathVariable Long id){
-        personService.deletePersonById(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+    @RequestMapping(value = "/people", method = RequestMethod.POST)
+    public ResponseEntity<?> createPerson(@RequestBody Person person) {
+        return personService.addPerson(person);
     }
-    @RequestMapping(value = "/person/{last_name}", method = RequestMethod.GET)
-    public ResponseEntity<?> findPersonByLastName(@PathVariable String last_name){
-        personService.findPersonByLastName(last_name);
-        return new ResponseEntity<>(HttpStatus.OK);
+    @RequestMapping(value = "/people/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<?> updatePerson(@RequestBody Person person, @PathVariable Long id) {
+        return personService.updatePerson(person);
     }
-    @RequestMapping(value = "/person", method = RequestMethod.POST)
-    public ResponseEntity<?> addPerson(@RequestBody Person person){
-        personService.addPerson(person);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    @RequestMapping(value = "/people/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<?> deletePerson(@PathVariable Long id) {
+        return personService.removePerson(id);
     }
-    @RequestMapping(value = "/person/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<?> updatePerson(@PathVariable Long id, @RequestBody Person person){
-        personService.getSinglePersonById(id);
-        personService.updatePerson(person, id);
-        return new ResponseEntity<>(HttpStatus.OK);
 
-    }
+//    @RequestMapping(value = "/people/reverselookup/{mobile}", method = RequestMethod.GET)
+//    public ResponseEntity<Iterable<Person>> reverseLookup(@PathVariable String mobile) {
+//        return personService.reverseLookup(mobile);
+//    }
+//
+//    @RequestMapping(value = "/people/surname/{lastName}", method = RequestMethod.GET)
+//    public ResponseEntity<Iterable<Person>> surnameLookup(@PathVariable String lastName) {
+//        return personService.findByLastName(lastName);
+//    }
+
+//    @RequestMapping(value = "/people/firstname/stats", method = RequestMethod.GET)
+//    public ResponseEntity<Map<String, Integer>> firstNameWithStats() {
+//        return personService.getFirstNameStats();
+//    }
 }
