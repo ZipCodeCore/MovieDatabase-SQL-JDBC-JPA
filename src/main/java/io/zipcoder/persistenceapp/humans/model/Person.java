@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Person extends BaseEntity {
 
-    private static final long serialVersionUID = 123456789L;
+    private static final Long serialVersionUID = 123456789L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,8 +20,9 @@ public class Person extends BaseEntity {
     private String firstName;
 
     @NotEmpty
-    @Column(name = "LAST_NAME", nullable = false)
+    @Column(name = "LAST_NAME"/*, nullable = false*/)
     private String lastName;
+    // Check to see if nullable=false is better or @NotEmpty is better
 
     @Column(name = "BIRTHDAY")
     private String birthday;

@@ -1,11 +1,11 @@
 package io.zipcoder.persistenceapp.humans.repository;
 
 import io.zipcoder.persistenceapp.core.repository.BaseRepository;
-import io.zipcoder.persistenceapp.humans.model.Person;
+import io.zipcoder.persistenceapp.humans.model.Home;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonRepository extends BaseRepository<Person, Integer> {
+public interface HomeRepository extends BaseRepository<Home, Integer> {
 
 
 
