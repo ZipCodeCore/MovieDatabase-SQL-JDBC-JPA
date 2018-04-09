@@ -9,7 +9,8 @@ import javax.persistence.EntityTransaction;
 import java.util.List;
 
 public interface PersonService {
-    List<Person> getCarByMake(String make);
+
+    List<Person> getAllPeople();
 
     void deleteCar(int id);
 
@@ -20,6 +21,8 @@ public interface PersonService {
     Iterable<Person> getSalesPackagesForYear(String year);
 
     void addCar(Person person);
+
+
 
 //    POST /people -- create a person
 //    PUT /people/{id} -- update person with id. 404 error if that person doesn't exist yet
