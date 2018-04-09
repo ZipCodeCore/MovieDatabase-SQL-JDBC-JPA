@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp.repositories;
+package io.zipcoder.persistenceapp.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;

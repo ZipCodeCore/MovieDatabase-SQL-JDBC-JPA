@@ -1,6 +1,7 @@
-package io.zipcoder.persistenceapp.services;
+package io.zipcoder.persistenceapp.service;
 
-import io.zipcoder.persistenceapp.repositories.PersonRepository;
+import io.zipcoder.persistenceapp.model.Person;
+import io.zipcoder.persistenceapp.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,10 @@ public class PersonService {
     @Autowired
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
+    }
+
+    public Person createPerson(Person person) {
+        return personRepository.save(person);
     }
 
 }
