@@ -1,6 +1,8 @@
 package io.zipcoder.persistenceapp.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import io.zipcoder.persistenceapp.domain.Person;
+import org.springframework.stereotype.Repository;
 
-public interface PersonRepository extends JpaRepository{
+@Repository
+public interface PersonRepository extends BaseRepository<Person, Integer> {
 }

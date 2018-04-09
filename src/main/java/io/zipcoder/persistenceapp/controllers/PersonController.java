@@ -7,46 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class PersonController implements PersonService{
+public class PersonController {
 
 
-    @Override
-    public void addPerson() {
 
-    }
-
-    @Override
-    public void updateExistingPerson() {
-
-    }
-
-    @Override
-    public void removePerson() {
-
-    }
-
-    @Override
-    public void removeListOfPeople() {
-
-    }
-
-    @Override
-    public List<Person> findPeopleWithFirstName(String firstName) {
-        return null;
-    }
-
-    @Override
-    public List<Person> findPeopleWithLastName(String lastName) {
-        return null;
-    }
-
-    @Override
-    public List<Person> findPeopleWithBirthday(String birthday) {
-        return null;
-    }
-
-    @Override
-    public Person findPersonWithId() {
-        return null;
-    }
 }
