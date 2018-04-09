@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class PersonController {
 
+
     @Autowired
     private PersonService personService;
 
@@ -19,11 +20,19 @@ public class PersonController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+//    @RequestMapping(value = "/people/{id}", method = RequestMethod.PUT)
+//    public ResponseEntity<?> updatePerson(@PathVariable Integer id, @RequestBody Person person) {
+//        Person person =
+//    }
+
     @RequestMapping(value = "/people/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> lookUpId(@PathVariable int id) {
         Person person = personService.findById(id);
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
+
+
+
 
 
 }
