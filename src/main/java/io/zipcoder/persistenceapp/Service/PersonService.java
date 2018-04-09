@@ -1,11 +1,7 @@
 package io.zipcoder.persistenceapp.Service;
 
-import io.zipcoder.persistenceapp.Entity.Person;
+import io.zipcoder.persistenceapp.domain.Person;
 import org.springframework.http.ResponseEntity;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 
 public interface PersonService {
 

@@ -1,23 +1,18 @@
 package io.zipcoder.persistenceapp.Service;
 
-import io.zipcoder.persistenceapp.Entity.Person;
-import io.zipcoder.persistenceapp.Entity.PersonRepository;
+import io.zipcoder.persistenceapp.domain.Person;
+import io.zipcoder.persistenceapp.domain.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
 @Primary
 @Service
 public class JPAPersonServiceImpl implements PersonService{
 
     private PersonRepository personRepository;
-
     /**
      * To-Do: findAll LastNames, FirstNames, Birthdays,Mobile.
      * Done with: basic methods.
@@ -27,36 +22,36 @@ public class JPAPersonServiceImpl implements PersonService{
     public JPAPersonServiceImpl(PersonRepository personRepository){
         this.personRepository = personRepository;
     }
-//    @Override
+    @Override
     public ResponseEntity<Person> findById(Long id) {
         return new ResponseEntity<>(personRepository.findOne(id), HttpStatus.OK);
     }
-//    @Override
+    @Override
     public ResponseEntity<Iterable<Person>> getAllPeople() {
         return new ResponseEntity<>(personRepository.findAll(), HttpStatus.OK);
     }
-//    @Override
+    @Override
     public ResponseEntity<?> addPerson(Person person) {
         return new ResponseEntity<>(personRepository.save(person), HttpStatus.OK);
     }
-//    @Override
+    @Override
     public ResponseEntity<?> updatePerson(Person person) {
         return new ResponseEntity<>(personRepository.save(person), HttpStatus.OK);
     }
-//    @Override
+    @Override
     public ResponseEntity<?> removePerson(Long id) {
         personRepository.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-//    @Override
+    @Override
     public ResponseEntity<Iterable<Person>> findByLastName(String lastname) {
         return null;
     }
-//    @Override
+    @Override
     public ResponseEntity<Iterable<Person>> reverseLookup(String mobile) {
         return null;
     }
-//    @Override
+    @Override
     public ResponseEntity<Iterable<Person>> findByBirthday(String birthday) {
         return null;
     }

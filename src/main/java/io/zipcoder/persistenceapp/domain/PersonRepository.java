@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp.Entity;
+package io.zipcoder.persistenceapp.domain;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {

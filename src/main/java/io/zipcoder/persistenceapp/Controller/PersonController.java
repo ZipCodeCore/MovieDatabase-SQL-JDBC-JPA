@@ -1,11 +1,10 @@
 package io.zipcoder.persistenceapp.Controller;
 
-import io.zipcoder.persistenceapp.Entity.Person;
+import io.zipcoder.persistenceapp.domain.Person;
 import io.zipcoder.persistenceapp.Service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 public class PersonController {

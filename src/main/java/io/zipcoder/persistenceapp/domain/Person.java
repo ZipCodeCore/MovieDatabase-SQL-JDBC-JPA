@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp.Entity;
+package io.zipcoder.persistenceapp.domain;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
 //package io.zipcoder.persistenceapp.Service;
 //
-//import io.zipcoder.persistenceapp.Entity.Person;
+//import io.zipcoder.persistenceapp.domain.Person;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.http.ResponseEntity;
