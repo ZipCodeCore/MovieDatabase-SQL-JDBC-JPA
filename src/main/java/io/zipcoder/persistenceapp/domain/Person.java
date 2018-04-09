@@ -12,20 +12,26 @@ public class Person {
 
     @Id
     @GeneratedValue
-    @Column(name = "Id")
+    @Column(name = "ID")
     private long id;
 
     @NotEmpty
-    @Column(name = "First Name")
+    @Column(name = "FIRST_NAME")
     private String firstName;
 
     @NotEmpty
-    @Column(name = "Last Name")
+    @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
 
+    @Column(name = "BIRTHDAY")
+    private String birthday;
+
     @NotEmpty
-    @Column(name = "Birthday")
-    private String bithday;
+    @Column(name = "MOBILE")
+    private String mobile;
+
+    @Column(name = "HOME_ID")
+    private short homeId;
 
     public long getId() {
         return id;
@@ -51,12 +57,27 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getBithday() {
-        return bithday;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setBithday(String bithday) {
-        this.bithday = bithday;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public short getHomeId() {
+        return homeId;
+    }
+
+    public void setHomeId(short homeId) {
+        this.homeId = homeId;
+    }
 }
