@@ -1,7 +1,7 @@
-package io.zipcoder.persistenceapp.service;
+package io.zipcoder.persistenceapp.humans.service;
 
-import io.zipcoder.persistenceapp.model.Person;
-import io.zipcoder.persistenceapp.repository.PersonRepository;
+import io.zipcoder.persistenceapp.humans.model.Person;
+import io.zipcoder.persistenceapp.humans.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

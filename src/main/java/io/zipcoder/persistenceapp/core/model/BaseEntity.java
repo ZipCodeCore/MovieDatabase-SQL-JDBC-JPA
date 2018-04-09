@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp.model;
+package io.zipcoder.persistenceapp.core.model;
 
 import java.io.Serializable;
 

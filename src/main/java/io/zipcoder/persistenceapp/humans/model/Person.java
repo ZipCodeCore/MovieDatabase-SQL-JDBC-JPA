@@ -1,5 +1,6 @@
-package io.zipcoder.persistenceapp.model;
+package io.zipcoder.persistenceapp.humans.model;
 
+import io.zipcoder.persistenceapp.core.model.BaseEntity;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;

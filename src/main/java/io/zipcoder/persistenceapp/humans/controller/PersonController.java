@@ -1,4 +1,4 @@
-package io.zipcoder.persistenceapp.controller;
+package io.zipcoder.persistenceapp.humans.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
