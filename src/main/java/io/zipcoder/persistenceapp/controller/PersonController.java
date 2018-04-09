@@ -24,4 +24,6 @@ public class PersonController {
         Person person = personService.findById(id);
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
+
+
 }

@@ -20,27 +20,23 @@ public class jpaPersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void deleteCar(int id) {
+    public void deletePerson(int id) {
 
     }
 
     @Override
-    public void deleteCars(List<Person> cars) {
+    public void deletePeople(List<Person> cars) {
 
     }
 
     @Override
-    public Iterable<Person> getSalesPackages() {
+    public void addPerson(Person person) {
+
+    }
+
+    @Override
+    public Person findById(int id) {
         return null;
     }
 
-    @Override
-    public Iterable<Person> getSalesPackagesForYear(String year) {
-        return null;
-    }
-
-    @Override
-    public void addCar(Person person) {
-
-    }
 }
