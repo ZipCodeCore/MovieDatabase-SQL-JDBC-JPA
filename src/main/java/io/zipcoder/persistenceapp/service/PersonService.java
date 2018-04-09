@@ -12,15 +12,13 @@ public interface PersonService {
 
     List<Person> getAllPeople();
 
-    void deleteCar(int id);
+    void deletePerson(int id);
 
-    void deleteCars(List<Person> cars);
+    void deletePeople(List<Person> cars);
 
-    Iterable<Person> getSalesPackages();
+    void addPerson(Person person);
 
-    Iterable<Person> getSalesPackagesForYear(String year);
-
-    void addCar(Person person);
+    Person findById(int id);
 
 
 
