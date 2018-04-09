@@ -33,7 +33,7 @@ public class Person extends BaseEntity {
     @Column(name = "HOME_ID")
     private Short homeId;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -73,7 +73,7 @@ public class Person extends BaseEntity {
         this.mobile = mobile;
     }
 
-    public short getHomeId() {
+    public Short getHomeId() {
         return homeId;
     }
 
