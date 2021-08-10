@@ -15,7 +15,7 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-     PersonService service;
+    private PersonService service;
 
     @RequestMapping(method = RequestMethod.POST, value = "/people")
     public ResponseEntity<Person> create(
