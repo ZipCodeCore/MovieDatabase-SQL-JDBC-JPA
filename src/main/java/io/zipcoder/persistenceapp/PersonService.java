@@ -22,13 +22,31 @@ public class PersonService {
         return repo.findOne(id);
     }
 
-    public List<Person> findAllByNames(String firstName, String lastName) {
+    public List<Person> findAllByNames(String firstName) {
         List<Person> personList = new ArrayList<>();
         readAll().forEach(person -> {
-            if (person.getFirstName().equals(firstName) || person.getLastName().equals(lastName))
+            if (person.getFirstName().equals(firstName))
                 personList.add(person);
         });
         return personList;
+    }
+
+    public List<Person> findAllByLastName(String lastName) {
+        List<Person> personList = new ArrayList<>();
+        readAll().forEach(person -> {
+            if (person.getLastName().equals(lastName))
+                personList.add(person);
+        });
+        return personList;
+    }
+
+    public List<Person> findByMobile(String mobile) {
+        List<Person> result = new ArrayList<>();
+        readAll().forEach(person -> {
+            if(person.getMobile().equals(mobile))
+                result.add(person);
+        });
+        return result;
     }
 
     public List<Person> readAll() {

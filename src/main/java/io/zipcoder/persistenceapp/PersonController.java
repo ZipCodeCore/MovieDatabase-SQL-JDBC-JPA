@@ -15,25 +15,30 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    private PersonService service;
+     PersonService service;
 
     @RequestMapping(method = RequestMethod.POST, value = "/people")
-    public ResponseEntity<Person> create(@RequestBody Person person) {
+    public ResponseEntity<Person> create(
+            @RequestBody Person person) {
         return new ResponseEntity<>(service.create(person), HttpStatus.CREATED);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/people/{id}")
-    public ResponseEntity<Person> update(@RequestBody Long id, Person person) {
+    public ResponseEntity<Person> update(
+            @PathVariable Long id,
+            @RequestBody Person person) {
             return new ResponseEntity<>(service.update(id, person), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/people/{id}")
-    public ResponseEntity<Person> getPerson(@RequestBody Long id) {
+    public ResponseEntity<Person> getPerson(
+            @PathVariable Long id) {
         return new ResponseEntity<>(service.read(id), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/people/{id}")
-    public ResponseEntity<Person> delete(@RequestBody Long id) {
+    public ResponseEntity<Person> delete(
+            @PathVariable Long id) {
             return new ResponseEntity<>(service.delete(id), HttpStatus.ACCEPTED);
     }
 
@@ -43,7 +48,24 @@ public class PersonController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/people/reverselookup/{mobileNumber}")
-    public ResponseEntity<Person> findByMobile(@RequestBody Integer phoneNumber) {
-        return null;
+    public ResponseEntity<List<Person>> findByMobile(
+            @PathVariable String phoneNumber) {
+        return new ResponseEntity<>(service.findByMobile(phoneNumber), HttpStatus.OK);
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/people/surname/{lastName}")
+    public ResponseEntity<List<Person>> findByLastName(
+            @PathVariable String lastName) {
+        return new ResponseEntity<>(service.findAllByLastName(lastName), HttpStatus.OK);
+    }
+
+//    @RequestMapping(method = RequestMethod.GET, value = "/people/surname/{firstName}")
+//    public ResponseEntity<List<Person>> findByFirstName(@PathVariable String firstName) {
+//        return new ResponseEntity<>(service.findAllByLastName(firstName), HttpStatus.OK);
+//    }
+
+//    @RequestMapping(method = RequestMethod.GET, value = "/people/firstname/stats")
+//    public ResponseEntity<List<Person>> firstNameFrequency() {
+//
+//    }
 }
