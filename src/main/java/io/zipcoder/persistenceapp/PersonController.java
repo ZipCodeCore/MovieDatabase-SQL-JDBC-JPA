@@ -17,7 +17,7 @@ public class PersonController {
     @Autowired
     private PersonService service;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/people")
+    @RequestMapping(method = RequestMethod.POST, value = "/create")
     public ResponseEntity<Person> create(
             @RequestBody Person person) {
         return new ResponseEntity<>(service.create(person), HttpStatus.CREATED);
@@ -42,7 +42,7 @@ public class PersonController {
             return new ResponseEntity<>(service.delete(id), HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/people")
+    @RequestMapping(method = RequestMethod.GET, value = "/read")
     public ResponseEntity<List<Person>> readAll() {
         return new ResponseEntity<>(service.readAll(), HttpStatus.OK);
     }

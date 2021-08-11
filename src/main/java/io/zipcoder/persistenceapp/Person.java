@@ -2,10 +2,7 @@ package io.zipcoder.persistenceapp;
 
 import org.springframework.context.annotation.Bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -13,11 +10,18 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "firstName")
     private String firstName;
+    @Column(name = "lastName")
     private String lastName;
+    @Column(name = "mobile")
     private String mobile;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "birthDate")
     private Date birthDate;
+    @Column(name = "home_id")
     private int home_id;
 
     public Person() {
