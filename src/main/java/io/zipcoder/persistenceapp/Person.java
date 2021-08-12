@@ -18,21 +18,21 @@ public class Person {
     private String lastName;
     @Column(name = "mobile")
     private String mobile;
-    @Temporal(TemporalType.DATE)
-    @Column(name = "birthDate")
-    private Date birthDate;
+//    @Temporal(TemporalType.DATE)
+//    @Column(name = "birthDate")
+//    private Date birthDate;
     @Column(name = "home_id")
-    private int home_id;
+    private Long home_id;
 
     public Person() {
     }
 
-    public Person(Long id, String firstName, String lastName, String mobile, Date birthDate, int home_id) {
+    public Person(Long id, String firstName, String lastName, String mobile, Long home_id) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobile = mobile;
-        this.birthDate = birthDate;
+//        this.birthDate = birthDate;
         this.home_id = home_id;
     }
 
@@ -68,19 +68,19 @@ public class Person {
         this.mobile = mobile;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
+//    public Date getBirthDate() {
+//        return birthDate;
+//    }
+//
+//    public void setBirthDate(Date birthDate) {
+//        this.birthDate = birthDate;
+//    }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public int getHome_id() {
+    public Long getHome_id() {
         return home_id;
     }
 
-    public void setHome_id(int home_id) {
+    public void setHome_id(Long home_id) {
         this.home_id = home_id;
     }
 }

@@ -60,7 +60,7 @@ public class PersonService {
         Person personInDb = read(id);
         personInDb.setFirstName(newPersonData.getFirstName());
         personInDb.setLastName(newPersonData.getLastName());
-        personInDb.setBirthDate(newPersonData.getBirthDate());
+//        personInDb.setBirthDate(newPersonData.getBirthDate());
         personInDb.setMobile(newPersonData.getMobile());
         personInDb.setHome_id(newPersonData.getHome_id());
         personInDb = repo.save(personInDb);
