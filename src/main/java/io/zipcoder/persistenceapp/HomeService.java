@@ -13,8 +13,8 @@ public class HomeService {
 
     @Autowired
     private HomeRepo repo;
-    @Autowired
-    private Person person;
+//    @Autowired
+//    private Person person;
 
     public Home create(Home home) {
         return repo.save(home);
@@ -50,14 +50,14 @@ public class HomeService {
     }
 
     // not too confident about this one
-    public List<Home> findHomeByPerson(Long id) {
-        List<Home> homeList = new ArrayList<>();
-        readAllHomes().forEach(h -> {
-            if (person.getHome_id().equals(id))
-                homeList.add(h);
-        });
-        return homeList;
-    }
+//    public List<Home> findHomeByPerson(Long id) {
+//        List<Home> homeList = new ArrayList<>();
+//        readAllHomes().forEach(h -> {
+//            if (person.getHome_id().equals(id))
+//                homeList.add(h);
+//        });
+//        return homeList;
+//    }
 
     public Home update(Long homeId, Home theNewHome) {
         Home homeInDb = read(homeId);

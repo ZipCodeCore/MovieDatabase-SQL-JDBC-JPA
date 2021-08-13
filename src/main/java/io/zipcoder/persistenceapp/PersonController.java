@@ -23,20 +23,20 @@ public class PersonController {
         return new ResponseEntity<>(service.create(person), HttpStatus.CREATED);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/people/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/people/u/{id}")
     public ResponseEntity<Person> update(
             @PathVariable Long id,
             @RequestBody Person person) {
             return new ResponseEntity<>(service.update(id, person), HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/people/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/people/r/{id}")
     public ResponseEntity<Person> getPerson(
             @PathVariable Long id) {
         return new ResponseEntity<>(service.read(id), HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/people/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/people/d/{id}")
     public ResponseEntity<Person> delete(
             @PathVariable Long id) {
             return new ResponseEntity<>(service.delete(id), HttpStatus.ACCEPTED);
