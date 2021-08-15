@@ -67,11 +67,11 @@ public class PersonService {
         return this.personRepository.findAllByLastName(lastName);
     }
 
-    public List<Person> findPersonByMobileNumber(String mobile) {
+    public List<Person> findPersonByMobile(String mobile) {
         return this.personRepository.findAllByMobile(mobile);
     }
 
-    public Map<String, List<Person>> getMapLastNamesToPeopleList() {
+    public Map<String, List<Person>> getMapSortByLastName() {
         List<Person> people = this.personRepository.findAll();
         HashMap<String, List<Person>> map = new HashMap<>();
         for (Person p : people) {
@@ -86,7 +86,7 @@ public class PersonService {
         return map;
     }
 
-    public Map<String, Integer> getMapFirstNamesToOccurrences() {
+    public Map<String, Integer> getFirstNamesOccur() {
         List<Person> people = this.personRepository.findAll();
         HashMap<String, Integer> map = new HashMap<>();
         for (Person p : people) {
@@ -104,7 +104,7 @@ public class PersonService {
         return p.getHomeId();
     }
 
-    public List<Person> getListPeopleInAHome(Long homeId) {
+    public List<Person> getAllPeopleInAHome(Long homeId) {
         return this.personRepository.findAllByHomeId(homeId);
     }
 }

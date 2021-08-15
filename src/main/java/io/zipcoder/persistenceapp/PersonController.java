@@ -57,24 +57,24 @@ public class PersonController {
 
 
 
-    @RequestMapping(value = "/people/reverse-lookup/{mobileNumber}", method = RequestMethod.GET)
+    @RequestMapping(value = "/people/mobil/{mobileNumber}", method = RequestMethod.GET)
     public ResponseEntity<List<Person>> findByMobileNumber(@PathVariable String mobileNumber) {
-        return new ResponseEntity<>(this.personService.findPersonByMobileNumber(mobileNumber), HttpStatus.OK);
+        return new ResponseEntity<>(this.personService.findPersonByMobile(mobileNumber), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/people/surname/{lastName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/people/lastName/{lastName}", method = RequestMethod.GET)
     public ResponseEntity<List<Person>> findPeopleWithLastName(@PathVariable String lastName) {
         return new ResponseEntity<>(this.personService.findPersonByLastName(lastName), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/people/surname", method = RequestMethod.GET)
     public ResponseEntity<Map<String, List<Person>>> getSurnameReport() {
-        return new ResponseEntity<>(this.personService.getMapLastNamesToPeopleList(), HttpStatus.OK);
+        return new ResponseEntity<>(this.personService.getMapSortByLastName(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/people/firstname/stats", method = RequestMethod.GET)
+    @RequestMapping(value = "/names/occur", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Integer>> getFirstNamesReport() {
-        return new ResponseEntity<>(this.personService.getMapFirstNamesToOccurrences(), HttpStatus.OK);
+        return new ResponseEntity<>(this.personService.getFirstNamesOccur(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/people/firstname/{firstName}", method = RequestMethod.GET)
@@ -100,7 +100,7 @@ public class PersonController {
 
     @RequestMapping(value = "/people/all/home/{homeId}", method = RequestMethod.GET)
     public ResponseEntity<List<Person>> findPeopleInAHome(@PathVariable Long homeId) {
-        return new ResponseEntity<>(this.personService.getListPeopleInAHome(homeId), HttpStatus.OK);
+        return new ResponseEntity<>(this.personService.getAllPeopleInAHome(homeId), HttpStatus.OK);
     }
 
 }
