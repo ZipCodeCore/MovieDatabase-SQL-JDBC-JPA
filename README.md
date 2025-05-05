@@ -63,8 +63,8 @@ Create the following REST endpoints to interact with the application. You can us
  - `GET` `/people/{id}` -- get the person with the specified ID
  - `DELETE` `/people/{id}` -- Delete the person with the specified ID
  - `GET` `/people` -- get all people in the database
- - `GET` `/people/reverselookup/{mobileNumber}` -- find all people with the specified mobile number
- - `GET` `/people/surname/{lastName}` -- Find all people with a particular last name
+ - `GET` `/people/reverselookup/{MOBILE}` -- find all people with the specified mobile number
+ - `GET` `/people/surname/{LAST_NAME}` -- Find all people with a particular last name
  - `GET` `/people/surname` -- Get the result of the surname report above
  - `GET` `/people/firstname/stats` -- Get the report of first name frequencies
  
